@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wisata_candi/screens/home_screen.dart';
 import 'package:wisata_candi/screens/main_screen.dart';
 import 'package:wisata_candi/screens/search_screen.dart';
+import 'package:wisata_candi/screens/sign_in_screen.dart';
+import 'package:wisata_candi/screens/sign_up_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +31,13 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const MainScreen(),
+      home: MainScreen(),
+      initialRoute: '/',
+      routes: {
+        '/homescreen': (context) => const HomeScreen(),
+        '/signin': (context) => const SignInScreen(),
+        '/signup': (context) => const SignUpScreen(),
+      },
     );
   }
 }
