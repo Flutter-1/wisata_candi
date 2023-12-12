@@ -28,13 +28,15 @@ jobs:
       run: flutter build apk
     - name: Flutter Build AppBundle
       run: flutter build appbundle
+    - run: mkdir -p build/app/outputs/apk/release/
+    - run: mkdir -p build/app/outputs/bundle/release/
     - name: Upload Android APK Release
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: release-apk
         path: build/app/outputs/apk/release/app-release.apk
     - name: Upload Android AppBundle Release
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: android-release
         path: build/app/outputs/bundle/release/app-release.aab
